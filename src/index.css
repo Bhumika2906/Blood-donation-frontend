@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.elements{
+    height:70px;
+    width:170px;
+    display:flex;
+    margin-left: 50px;
+    align-items:center;
+    color: rgb(152, 150, 150);
+    font-family:sans-serif;
+    font-weight:bold;
+    padding-left: 20px;
+
+}
+
+.elements:hover{
+    color:rgb(66, 82, 103);
+    background-color: rgba(167, 167, 167, 0.071);
+    border-radius: 10%;
+}
+
+.img{
+    background-image: url("illustration-flowing-conversation.svg");
+    background-size: contain;
+    background-position: center 50px;
+    background-repeat: no-repeat;
+}
