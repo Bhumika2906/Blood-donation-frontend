@@ -12,7 +12,7 @@ function Donorlist (){
    const fetchDonors = async() =>
    {
     try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/donors`);
+        const response = await fetch('https://blood-donation-backend-ryvp.onrender.com/donors);
         const data = await response.json();
         setDonors(data);
 
@@ -37,7 +37,7 @@ function Donorlist (){
    const handleDelete = async (donorID) => {
    if(window.confirm('Are you sure you want to delete this donor?')){
     try{
-        await fetch(`http://localhost:5000/donors/${donorID}` ,{
+        await fetch(`${process.env.REACT_APP_API_URL}/donors/${donorID}` ,{
             method: 'Delete'
         });
         //refresh the list after delete
