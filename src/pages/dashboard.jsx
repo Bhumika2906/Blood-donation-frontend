@@ -13,11 +13,11 @@ useEffect(() => {
 
 const fetchStats = async () => {
     try {
-        const donorRes = await fetch('http://localhost:5000/stats/donors');
+        const donorRes = await fetch(`${process.env.REACT_APP_API_URL}/stats/donors`);
         const donorData = await donorRes.json();
         setDonorStats(donorData);
 
-        const receiverRes = await fetch('http://localhost:5000/stats/receivers');
+        const receiverRes = await fetch(`${process.env.REACT_APP_API_URL}/stats/receivers`);
         const receiverData = await receiverRes.json();
         setReceiverStats(receiverData);
     } catch (error) {
