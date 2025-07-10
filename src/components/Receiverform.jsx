@@ -27,7 +27,7 @@ function Receiverform({onSubmit}) {
 
         try{
             //send POST req to backend with receiver data
-            const res = await fetch('http://localhost:5000/receivers',{
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/receivers`,{
                 method: "POST",
                 headers: {"Content-type": "application/json"}, //tell server its json
                 body: JSON.stringify(formData) // convert formdata into json string
