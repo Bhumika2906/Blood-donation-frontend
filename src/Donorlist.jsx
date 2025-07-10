@@ -12,7 +12,7 @@ function Donorlist (){
    const fetchDonors = async() =>
    {
     try {
-        const response = await fetch('https://blood-donation-backend-ryvp.onrender.com/donors);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/donors`);
         const data = await response.json();
         setDonors(data);
 
@@ -52,9 +52,9 @@ function Donorlist (){
 
     return(
 <div >
-    <div className ="heading flex item-centre justify-center mt-5 mb-2 bg-[rgba(31,40,91,0.84)] h-8 text-white text-lg font-semibold">Donors List</div>
+    <div className ="heading flex item-centre justify-center mt-5 mb-2 bg-[rgba(31,40,91,0.84)] h-8 text-white text-lg font-semibold w-full">Donors List</div>
 
-    <table className ="list table-fixed">
+    <table className ="list w-full">
        <thead className ="">
        
         <tr className =" bg-[rgba(101,111,216,0.28)] ">
