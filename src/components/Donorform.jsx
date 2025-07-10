@@ -23,7 +23,7 @@ function Donorform() {
         console.log("Donor Data:" , formData);
 
         try{
-            const res = await fetch('http://localhost:5000/donors',{
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/donors`,{
                 method: "POST",
                 headers: {"Content-type": "application/json"},
                 body: JSON.stringify(formData)
