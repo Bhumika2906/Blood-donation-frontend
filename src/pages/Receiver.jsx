@@ -13,7 +13,7 @@ function Receiver() {
     const handleFormSubmit = async (formData) =>{
        try {
        //fetch matching donors from DB
-       const response = await fetch(`${process.env.REACT_APP_API_URL}/match?bloodGroup=${encodeURIComponent(formData.bloodGroup)}`);
+       const response = await fetch(`${process.env.REACT_APP_API_URL}/receivers/match?bloodGroup=${encodeURIComponent(formData.bloodGroup)}`);
        const data = await response.json();
        console.log("Matched donor data received:", data);
 
