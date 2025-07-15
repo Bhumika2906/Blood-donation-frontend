@@ -91,10 +91,25 @@ const fetchStats = async () => {
     </div>
 
 {/* //Donorlist */}
-<div className ="">
+
+
+  <style>{`
+  .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    
+  `}</style>
+  
+<div className="h-screen flex flex-col"> 
+<div className ="h-screen flex-1 overflow-y-scroll scrollbar-hide pb-24 max-h-[calc(100vh-80px)]">
     <Donorlist/>
 
 </div>
+</div> 
 
     
 
