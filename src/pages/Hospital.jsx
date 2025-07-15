@@ -19,7 +19,7 @@ const handleSearch = async () => {
   try {
     setLoading(true);
     setError('');
-    const res = await axios.get(`http://localhost:5000/search?location=${encodeURIComponent(location)}`);
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/search?location=${encodeURIComponent(location)}`);
     setPlaces(res.data);
 
   } catch (error) {
