@@ -12,7 +12,7 @@ function Donorlist (){
    const fetchDonors = async() =>
    {
     try {
-        const response = await fetch('https://blood-donation-backend-ryvp.onrender.com/donors');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/donors`);
         const data = await response.json();
         setDonors(data);
 
