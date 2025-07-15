@@ -30,7 +30,11 @@ const handleSearch = async () => {
   }
 };
 
-  
+ const handleKeyPress = (e) => {
+  if (e.key === 'Enter') {
+   handleSearch();
+  }
+}; 
 
 
     return(
@@ -41,7 +45,7 @@ const handleSearch = async () => {
 <div className ="search bar mt-6 rounded-[25px] border-b-2 border-red-500 shadow-sm w-full h-10 flex items-center pl-3 hover:ring-1 hover:ring-gray-500 transition-all duration-300">
 <button className ="" onClick ={handleSearch}><FontAwesomeIcon icon = { faSearch} className ="text-red-500 text-xl hover:text-slate-600 active:text-2xl"/></button>    
 <input type="text" placeholder ="Enter the location" className = "w-3/4 ml-5 focus:outline-none"
-value = {location} onChange = {(e) => setLocation(e.target.value)}></input>
+value = {location} onChange = {(e) => setLocation(e.target.value)} onKeyDown={handleKeyPress}></input>
 </div>
 
 <div className = "flex justify-center items-center mt-10">
