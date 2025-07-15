@@ -12,7 +12,7 @@ function Donorlist (){
    const fetchDonors = async() =>
    {
     try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/donors`);
+        const response = await fetch('https://blood-donation-backend-ryvp.onrender.com/donors');
         const data = await response.json();
         setDonors(data);
 
@@ -24,6 +24,12 @@ function Donorlist (){
    };
 
    useEffect(() => {
+    console.log('=== DEBUG INFO ===');
+    console.log('API URL being used:', process.env.REACT_APP_API_URL);
+    console.log('Full URL:', `${process.env.REACT_APP_API_URL}/donors`);
+    console.log('==================');
+    
+    
     fetchDonors();
    },[]);
 
@@ -48,10 +54,10 @@ function Donorlist (){
 <div >
     <div className ="heading flex item-centre justify-center mt-5 mb-2 bg-[rgba(31,40,91,0.84)] h-8 text-white text-lg font-semibold w-full">Donors List</div>
 
-    <table className ="list w-full">
+    <table className ="list w-full h-screen overflow-y-auto">
        <thead className ="">
        
-        <tr className =" bg-[rgba(101,111,216,0.28)] ">
+        <tr className =" bg-[rgba(101,111,216,0.28)]">
             <th className ="w-[200px] ">Name</th>
             <th className ="w-[250px]">Address</th>
             <th className ="w-[200px]">MobileNo.</th>
